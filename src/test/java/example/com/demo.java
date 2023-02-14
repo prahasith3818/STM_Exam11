@@ -5,36 +5,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
-import java.io.IOException;
+
 public class demo {
     @Test
     public void test(){
-
         WebDriver driver;
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
-        driver.get("https://www.netflix.com/in/login");
+        driver.get("https://github.com/login");
         System.out.println(driver.getTitle());
 
 
-        driver.findElement(By.id("id_userLoginId")).sendKeys("2000030819@kluniversity.in");
-        highlight(driver,driver.findElement(By.id("id_userLoginId")));
+        driver.findElement(By.id("login_field")).sendKeys("2000030819@kluniversity.in");
+        highlight(driver,driver.findElement(By.id("login_field")));
         driver.findElement(By.name("password")).sendKeys("welcome");
         highlight(driver,driver.findElement(By.name("password")));
-        //driver.findElement(By.className("header-logo"));
-        //highlight(driver,driver.findElement(By.className("header-logo")));
+        driver.findElement(By.className("header-logo"));
+        highlight(driver,driver.findElement(By.className("header-logo")));
         //driver.findElement(By.linkText("Forgot password?")).click();
-        //highlight(driver,driver.findElement(By.linkText("Forgot password?")));
+        highlight(driver,driver.findElement(By.linkText("Forgot password?")));
         //driver.findElement(By.partialLinkText("Create an account")).click();
-        //driver.findElement(By.tagName("h1"));
-        //highlight(driver,driver.findElement(By.tagName("h1")));
+        highlight(driver, driver.findElement(By.partialLinkText("Create an account")));
+        driver.findElement(By.tagName("h1"));
+        highlight(driver,driver.findElement(By.tagName("h1")));
+
 
 
     }
